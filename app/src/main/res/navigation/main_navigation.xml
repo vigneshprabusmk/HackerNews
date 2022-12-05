@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/main_navigation"
+  app:startDestination="@id/showStories">
+
+  <fragment
+    android:id="@+id/jobs"
+    android:name="com.hackerNewsApp.hn.ui.stories.job.JobsFragment"
+    android:label="@string/jobs"
+    tools:layout="@layout/fragment_jobs"/>
+  <fragment
+    android:id="@+id/showStories"
+    android:name="com.hackerNewsApp.hn.ui.stories.show.ShowStoriesFragment"
+    android:label="@string/show_stories"
+    tools:layout="@layout/fragment_show_stories"/>
+  <fragment
+    android:id="@+id/topStories"
+    android:name="com.hackerNewsApp.hn.ui.stories.top.TopStoriesFragment"
+    android:label="@string/top_stories"
+    tools:layout="@layout/fragment_top_stories"/>
+  <!--<fragment
+    android:id="@+id/userInfoFragment"
+    android:name="com.hackerNewsApp.hn.ui.user.UserInfoFragment"
+    android:label="fragment_user_info"
+    tools:layout="@layout/fragment_user_info" />-->
+  <fragment
+    android:id="@+id/askStories"
+    android:name="com.hackerNewsApp.hn.ui.stories.ask.AskStoriesFragment"
+    android:label="@string/ask_stories"
+    tools:layout="@layout/fragment_ask_stories">
+    <action
+      android:id="@+id/action_askStories_to_askStoryDetailFragment"
+      app:destination="@id/askStoryDetailFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/askStoryDetailFragment"
+    android:name="com.hackerNewsApp.hn.ui.stories.ask.detail.AskStoryDetailFragment"
+    android:label="Ask Story"
+    tools:layout="@layout/fragment_ask_story_detail" >
+    <argument
+      android:name="storyItem"
+      app:argType="com.hackerNewsApp.hn.domain.models.StoryModel" />
+    <action
+      android:id="@+id/action_askStoryDetailFragment_to_commentsFragment"
+      app:destination="@id/commentsFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/commentsFragment"
+    android:name="com.hackerNewsApp.hn.ui.stories.comments.CommentsFragment"
+    android:label="@string/comments"
+    tools:layout="@layout/fragment_comments">
+    <argument
+      android:name="ids"
+      app:argType="com.hackerNewsApp.hn.domain.models.IdsModel" />
+  </fragment>
+</navigation>

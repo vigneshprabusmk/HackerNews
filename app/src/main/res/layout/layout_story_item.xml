@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/parentLayout"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  app:cardBackgroundColor="@color/white"
+  android:layout_margin="8sp"
+  app:cardCornerRadius="8sp"
+  app:cardElevation="8sp">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8sp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/titleTextView"
+      style="@style/TextAppearance.MaterialComponents.Headline6"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:text="@string/story_title"
+      android:textSize="18sp"
+      android:layout_marginEnd="4dp"
+      android:textColor="@color/primaryColor"
+      app:layout_constraintEnd_toStartOf="@+id/storyTypeTextView"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/authorNameTextView"
+      style="@style/TextAppearance.MaterialComponents.Body2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/author"
+      android:textColor="@color/black"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/timeTextView"
+      style="@style/TextAppearance.AppCompat.Small"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:text="@string/sample_date"
+      android:textColor="@color/black"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/authorNameTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/storyTypeTextView"
+      style="@style/TextAppearance.MaterialComponents.Caption"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:alpha="0.5"
+      android:text="@string/story"
+      android:textColor="@color/black"
+      android:textSize="16sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+      android:id="@+id/dot1"
+      layout="@layout/view_dot"
+      android:layout_width="@dimen/dot_view_size"
+      android:layout_height="@dimen/dot_view_size"
+      android:layout_marginStart="8sp"
+      app:layout_constraintBottom_toBottomOf="@+id/timeTextView"
+      app:layout_constraintStart_toEndOf="@+id/timeTextView"
+      app:layout_constraintTop_toTopOf="@+id/timeTextView"
+      tools:ignore="SmallSp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/commentsImageView"
+      android:layout_width="16sp"
+      android:layout_height="16sp"
+      android:layout_marginStart="8sp"
+      android:src="@drawable/ic_baseline_comment_24"
+      app:layout_constraintBottom_toBottomOf="@+id/timeTextView"
+      app:layout_constraintStart_toEndOf="@+id/dot1"
+      app:layout_constraintTop_toTopOf="@+id/timeTextView"
+      app:tint="@color/iconColor" />
+
+    <!--    <com.mikepenz.iconics.view.IconicsImageView-->
+    <!--      android:id="@+id/commentsImageView"-->
+    <!--      android:layout_width="16sp"-->
+    <!--      android:layout_height="16sp"-->
+    <!--      android:layout_marginStart="32sp"-->
+    <!--      app:iiv_icon="gmd-favorite"-->
+    <!--      app:layout_constraintBottom_toBottomOf="@+id/timeTextView"-->
+    <!--      app:layout_constraintStart_toEndOf="@+id/timeTextView"-->
+    <!--      app:layout_constraintTop_toTopOf="@+id/timeTextView"-->
+    <!--      app:tint="@color/iconColor" />-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/commentsTextView"
+      style="@style/TextAppearance.AppCompat.Small"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="4sp"
+      android:text="@string/zero"
+      android:textColor="@color/black"
+      app:layout_constraintBottom_toBottomOf="@+id/timeTextView"
+      app:layout_constraintStart_toEndOf="@+id/commentsImageView"
+      app:layout_constraintTop_toTopOf="@+id/timeTextView" />
+
+    <!--    <com.mikepenz.iconics.view.IconicsImageView-->
+    <!--      android:id="@+id/scoreImageView"-->
+    <!--      android:layout_width="16sp"-->
+    <!--      android:layout_height="16sp"-->
+    <!--      android:layout_marginStart="16sp"-->
+    <!--      app:iiv_icon="gmd-favorite"-->
+    <!--      app:layout_constraintBottom_toBottomOf="@+id/timeTextView"-->
+    <!--      app:layout_constraintStart_toEndOf="@+id/commentsTextView"-->
+    <!--      app:layout_constraintTop_toTopOf="@+id/timeTextView"-->
+    <!--      app:tint="@color/iconColor" />-->
+
+    <include
+      android:id="@+id/dot2"
+      layout="@layout/view_dot"
+      android:layout_width="@dimen/dot_view_size"
+      android:layout_height="@dimen/dot_view_size"
+      android:layout_marginStart="8sp"
+      app:layout_constraintBottom_toBottomOf="@+id/timeTextView"
+      app:layout_constraintStart_toEndOf="@+id/commentsTextView"
+      app:layout_constraintTop_toTopOf="@+id/timeTextView"
+      tools:ignore="SmallSp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/scoreImageView"
+      android:layout_width="16sp"
+      android:layout_height="16sp"
+      android:layout_marginStart="8sp"
+      android:src="@drawable/ic_baseline_favorite_border_24"
+      app:layout_constraintBottom_toBottomOf="@+id/timeTextView"
+      app:layout_constraintStart_toEndOf="@+id/dot2"
+      app:layout_constraintTop_toTopOf="@+id/timeTextView"
+      app:tint="@color/iconColor" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/scoreTextView"
+      style="@style/TextAppearance.AppCompat.Small"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="4sp"
+      android:text="@string/zero"
+      android:textColor="@color/black"
+      app:layout_constraintBottom_toBottomOf="@+id/timeTextView"
+      app:layout_constraintStart_toEndOf="@+id/scoreImageView"
+      app:layout_constraintTop_toTopOf="@+id/timeTextView" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
